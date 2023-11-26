@@ -33,6 +33,10 @@
             h3 {
                 font-size: 18px;
             }
+            p {
+                font-size: 15px;
+                padding-left: 15px;
+            }
             h5{
                 font-size: 16px;
             }
@@ -67,20 +71,41 @@
             h1{
             font-size: 14px;
             }
+            p{
+                font-size: 12px;
+                padding-left: 20px;
+            }
         }
         @media (min-width: 450px) and (max-width: 500px){
             h1{
                 font-size: 20px;
+            }
+            p{
+                font-size: 12px;
+                padding-left: 20px;
             }
         }
         @media (min-width:500px) and (max-width: 620px){
             h1{
                 font-size: 24px;
             }
+            p{
+                font-size: 16px;
+                padding-left: 23px;
+            }
         }
         @media (min-width:620px) and (max-width: 720px){
             h1{
                 font-size: 26px;
+            }
+            p{
+                font-size: 16px;
+                padding-left: 28px;
+            }
+        }
+        @media (min-width:720px) and (max-width: 1000px){
+            p{
+                padding-left: 35px;
             }
         }
         @media (min-width: 1000px){
@@ -88,11 +113,11 @@
                 font-size: 45px;
             }
         }
-        #image{
+        .image{
             max-width: 200px;
             border-radius: 50%;
         }
-        #image:hover{
+        .image:hover{
             transform: scale(1.03);
             border: 5px;
             border-color:  rgb(103, 101, 98);
@@ -157,13 +182,20 @@
         .carousel-inner img {
             display: block;
             margin: auto;
-            padding-right: 65px;
-            padding-left: 45px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+            padding-top: 10px;
         }
         .carousel-inner p{
             color: white;
+        }
+        .kartice{
+            display: flex;
+            justify-content: space-around;
+        }
+        .karta{
+            width: 30%;
+            height: auto;
         }
     </style>
 </head>
@@ -179,8 +211,8 @@
                         <li class="nav-item"><a class="nav-link" href="#">Početna</a></li>
                         <li class="nav-item"><a class="nav-link" href="#omeni">O meni</a></li>
                         <li class="nav-item"><a class="nav-link" href="#postignuca">Postignuća</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Aspiracije</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Kontakt</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#aspiracije">Aspiracije</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,10 +227,10 @@
 
     <div class="d-flex flex-row align-items-center gap-4 p-3 pozadina m-3" id="me">
         <div class="d-flex flex-column align-items-center centriranje">
-            <img src="slika.jpg" alt="SLIKA" id="image">
+            <img src="slika.jpg" alt="SLIKA" class="image" id="omeni">
             <h5 class="pt-3 pb-0"><b>Natalija Đorđević</b></h5>
         </div>
-        <div class="d-flex flex-column tekst" id="omeni">
+        <div class="d-flex flex-column tekst">
             <p class="text-left">
                 Učenica sam IV razreda odeljenja učenika sa posebnim sposobnostima za računarstvo i informatiku Prve kragujevačke gimnazije<br>
                 Dolazim iz Sevca, nadomak Šar-planine, gde sam završila 8 razreda osnovne škole "Šarski odred"<br>
@@ -220,7 +252,15 @@
                 <img src="html.png" alt="html" id="html" class="icon">
                 <img src="css.png" alt="css" id="css" class="icon">
             </div>
-            <p class="pt-4" style="font-size: 18px;">Projekti:</p>
+            <div class="d-flex flex-column align-items-center justify-content-center mt-4">
+                <p style="font-size: 18px;">Jezici:</p>
+                <ul>
+                    <li>Srpski jezik (maternji)</li>
+                    <li>Engleski jezik (srednji nivo)</li>
+                    <li>Ruski jezik (srednji nivo)</li>
+                </ul>
+            </div>
+            <p class="pt-2 mb-0" style="font-size: 18px;">Projekti:</p>
             <div class="container carousel mt-1 bg-secondary bg-gradient rounded">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators sty" style="list-style-type: none;">
@@ -230,27 +270,54 @@
                   </ol>
               
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active gap-4">
                         <img src="plakat.png" class="d-block" alt="1">
                         <p class="pe-4">U drugom razredu sam učestvovala u projektu za izradu postera festivala <br>"DAJ(T)E SE NA ZNANJE"</p>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item gap-4">
                       <img src="kmp.png" class="d-block w-100" alt="2">
                       <p class="pe-4">U trećem razredu uradila sam istraživački rad na temu "KMP algoritam"</p>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item gap-4">
                       <img src="webd.jpg" class="d-block w-100" alt="3">
                       <p class="pe-4">Trenutno radim na projektu "Moj Portfolio"</p>
                     </div>
                   </div>
-                  <a class="carousel-control-prev pe-5" href="#myCarousel" role="button" data-slide="prev">
+                  <a class="carousel-control-prev ms-0" href="#myCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only"></span>
                   </a>
-                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                  <a class="carousel-control-next me-0" href="#myCarousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only"></span>
                   </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center gap-3 mt-3 mb-3">
+        <h5 id="aspiracije"><b>ASPIRACIJE</b></h5>
+        <div class="d-flex flex-row p-3 kartice">
+            <div class="card karta">
+                <img src="sertifikat.jpg" class="card-img-top" alt="slika1">
+                <div class="card-body">
+                    <h5 class="card-title">SERTIFIKATI</h5>
+                    <p class="card-text">Sticanje relevantnih sertifikacija i nastavak učenja kako bih ostala informisana o najnovijim tehnologijama i trendovima</p>
+                </div>
+            </div>
+            <div class="card karta">
+                <img src="iot.jpg" class="card-img-top" alt="slika2">
+                <div class="card-body">
+                    <h5 class="card-title">IOT</h5>
+                    <p class="card-text">Rad na projektima povezanim sa IoT-om</p>
+                </div>
+            </div>
+            <div class="card karta">
+                <img src="mentor.png" class="card-img-top" alt="slika3">
+                <div class="card-body">
+                    <h5 class="card-title">MENTORSTVO I EDUKACIJA</h5>
+                    <p class="card-text">Postati mentor drugim profesionalcima ili studentima, kao i učestvovati u obrazovanju zajednice</p>
                 </div>
             </div>
         </div>
