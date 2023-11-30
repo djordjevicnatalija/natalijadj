@@ -7,12 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/669abbd252.js" crossorigin="anonymous"></script>
     <style>
         *{
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         body{
-            background-color: rgb(233, 227, 237);
+            background-color: rgb(234, 224, 241);
             margin: 0;
         }
         #color{
@@ -93,6 +94,9 @@
             .velicina{
                 font-size: 8px;
             }
+            h5{
+                font-size: 12px;
+            }
         }
         @media (min-width: 450px) and (max-width: 500px){
             h1{
@@ -104,6 +108,9 @@
             }
             .velicina{
                 font-size: 10px;
+            }
+            h5{
+                font-size: 18px;
             }
         }
         @media (min-width:500px) and (max-width: 620px){
@@ -117,6 +124,9 @@
             .velicina{
                 font-size: 12px;
             }
+            h5{
+                font-size: 20px;
+            }
         }
         @media (min-width:620px) and (max-width: 720px){
             h1{
@@ -128,6 +138,9 @@
             }
             .velicina{
                 font-size: 15px;
+            }
+            h5{
+                font-size: 24px;
             }
         }
         @media (min-width:720px) and (max-width: 1000px){
@@ -151,7 +164,8 @@
             max-width: 200px;
             border-radius: 50%;
         }
-        .image:hover{
+        .image:hover,
+        .card:hover{
             transform: scale(1.03);
             border: 5px;
             border-color:  rgb(103, 101, 98);
@@ -265,7 +279,12 @@
         .btn:hover {
             background-color: rgb(77, 14, 106);
             color: white;
-    }
+        }
+        #planine{
+            background-image: url("planine.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
@@ -300,11 +319,11 @@
             <h5 class="pt-3 pb-0"><b>Natalija Đorđević</b></h5>
         </div>
         <div class="d-flex flex-column tekst justify-content-center align-items-center">
-            <h5 class="mb-3" id="omeni"><b>O MENI</b></h5>
+            <h3 class="mb-3" id="omeni"><b>O MENI</b></h3>
             <p class="text-left ps-0">
                 Učenica sam IV razreda odeljenja učenika sa posebnim sposobnostima za računarstvo i informatiku Prve kragujevačke gimnazije<br>
                 Dolazim iz Sevca, nadomak Šar-planine, gde sam završila 8 razreda osnovne škole "Šarski odred"<br>
-                Volim da izlazim sa prijateljima, volim životinje, hobi mi je bio crtanje i omiljeni sport mi je skijanje<br>
+                Volim da izlazim sa prijateljima, volim životinje, a omiljeni sport mi je skijanje<br>
                 Trenutno želim da se najviše posvetim Web programiranju i Bazama podataka 
             </p>
         </div>
@@ -312,7 +331,15 @@
 
     <div class="d-flex flex-column velicina" style="width: 100%">
         <div class="m-3 mt-0 p-3 gap gap-2 border border-secondary rounded d-flex flex-column justify-content-center align-items-center" style="height: auto; background-color: white">
-            <h5 id="postignuca"><b>VEŠTINE I POSTIGNUĆA</b></h5>
+            <h3 id="postignuca"><b>VEŠTINE I POSTIGNUĆA</b></h3>
+            <div class="d-flex flex-column align-items-center justify-content-center mt-1">
+                <p class="ps-0">Jezici:</p>
+                <ul>
+                    <li>Srpski jezik (maternji)</li>
+                    <li>Engleski jezik (srednji nivo)</li>
+                    <li>Ruski jezik (srednji nivo)</li>
+                </ul>
+            </div>
             <p class="ps-0">Programski jezici:</p>
             <div class="d-flex flex-row justify-content-center align-items-center gap gap-3 gap-md-4 gap-lg-5">
                 <img src="python.jpg" alt="python" id="python" class="icon">
@@ -321,14 +348,6 @@
                 <img src="sql.png" alt="sql" id="sql" class="icon">
                 <img src="html.png" alt="html" id="html" class="icon">
                 <img src="css.png" alt="css" id="css" class="icon">
-            </div>
-            <div class="d-flex flex-column align-items-center justify-content-center mt-4">
-                <p class="ps-0">Jezici:</p>
-                <ul>
-                    <li>Srpski jezik (maternji)</li>
-                    <li>Engleski jezik (srednji nivo)</li>
-                    <li>Ruski jezik (srednji nivo)</li>
-                </ul>
             </div>
             <p class="pt-2 mb-0 ps-0">Projekti:</p>
             <div class="container carousel mt-1 bg-secondary bg-gradient rounded">
@@ -367,7 +386,7 @@
     </div>
 
     <div class="d-flex flex-column align-items-center gap-3 mt-3 mb-3">
-        <h5 id="aspiracije"><b>ASPIRACIJE</b></h5>
+        <h3 id="aspiracije"><b>ASPIRACIJE</b></h3>
         <div class="d-flex flex-column flex-sm-row w-100 kartice centriranje1">
             <div class="card karta">
                 <img src="sertifikat.jpg" class="card-img-top img-fluid" alt="slika1">
@@ -393,8 +412,8 @@
         </div>
     </div>
 
-    <div class="d-flex flex-column justify-content-center align-items-center gap-3 mt-5 mb-3">
-        <h5 id="kontakt"><b>KONTAKTIRAJ ME</b></h5>
+    <div class="d-flex flex-column justify-content-center align-items-center gap-3 mt-5 mb-0" id="planine">
+        <h3 id="kontakt" class="mb-0 mt-2"><b>KONTAKTIRAJ ME</b></h3>
         <form style="width: 60%;">
             <div class="mb-3">
                 <label for="exampleInputName1" class="form-label"><p class="ps-0 mb-0">Ime</p></label>
@@ -408,10 +427,15 @@
                 <label for="exampleFormControlTextarea1" class="form-label"><p class="ps-0 mb-0">Poruka</p></label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn"><p class="ps-0 mb-0">Prihvati</p></button>
+            <button type="submit" class="btn mb-3"><p class="ps-0 mb-0">Prihvati</p></button>
         </form>
+        <p class="mb-0 mt-3" style="color: rgba(255, 255, 255, 0.582);">Zaprati me</p>
+        <div class="d-flex flex-row gap-3 pt-2 pb-4">
+            <i class="fa-brands fa-instagram" style="color: rgba(255, 255, 255, 0.582); font-size: 40px;"></i>
+            <i class="fa-brands fa-square-facebook" style="color: rgba(255, 255, 255, 0.582); font-size:40px;"></i>
+            <i class="fa-brands fa-github" style="color: rgba(255, 255, 255, 0.582); font-size:40px;"></i>
+        </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
