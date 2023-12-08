@@ -1,0 +1,44 @@
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container {
+  display: flex;
+}
+.add__card {
+  width: 100%;
+}
+.todo-list,
+.done-list {
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 10px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#new-task-input {
+  margin-bottom: 10px;
+}
