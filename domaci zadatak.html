@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docmaci zadatak</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="items.js"></script>
+    <script>
+    $(document).ready(function() {
+        const Clicks = (click) => {
+            return function () {
+                let clicks = $(this).siblings('.kol')
+                let trenutnaKolicina = parseInt(clicks.text())
+                let sum = trenutnaKolicina + click
+                clicks.text(sum)
+                
+                if (sum < 0) {
+                    clicks.text(0)
+                }
+
+                let row = $(this).closest('tr')
+                promeniCenu(row)
+                ukupnaSuma()
+            }
+        }
+
+        const ukupnaSuma = () => {
+            let suma = 0
+            $('#items-list tr').each(function () {
+                let cena = parseInt($(this).find('.cenaid').text())
+                let kolicina = parseInt($(this).find('.kol').text())
+                suma += cena * kolicina
+            })
+
+            $('.ukupnacena span').text(suma)
+        };
+
+
+        const promeniCenu = (row) => {
+            let cena = parseInt(row.find('.cenaid').text())
+            let kolicina = parseInt(row.find('.kol').text())
+            let ukupnaCena = cena * kolicina
+            row.find('.total').text(ukupnaCena)
+        }
+
+        const renderItem = (item) => {
+            $trow = $("<tr></tr>")
+            $naziv = $("<td></td>").text(item['naziv'])
+            $cena = $("<td class='cenaid'></td>").text(item['cena'])
+            $kolicina = $("<td></td>").append(
+                $('<button type="button" id="button1">-</button>').click(Clicks(-1)),
+                $('<span class="kol"></span>').text(item['komada']),
+                $('<button type="button" id="button2">+</button>').click(Clicks(1))
+            )
+            $ukupnaCena = $("<td class='total'></td>").text(item['cena'] * parseInt(item['komada']))
+            $trow.append($naziv, $cena, $kolicina, $ukupnaCena)
+            return $trow
+        }
+
+        const renderItemsList = (list) => {
+            list.map(i => $("#items-list").append(renderItem(i)))
+            ukupnaSuma()
+        }
+
+        renderItemsList(items)
+
+        $("#dodaj").click(function () {
+            let noviProizvod = {
+                naziv: $('#naziv').val(),
+                cena: $('#cena').val(),
+                komada: $('#kolicina').val()
+            }
+
+            $("#items-list").append(renderItem(noviProizvod))
+            ukupnaSuma()
+
+            $('#naziv').val('')
+            $('#cena').val('')
+            $('#kolicina').val('')
+        })
+    
+    })
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Naziv
+                </th>
+                <th>
+                    Cena
+                </th>
+                <th>
+                    Kolicina
+                </th>
+                <th>
+                    Ukupna cena
+                </th>
+            </tr>
+        </thead>
+        <tbody id="items-list">
+
+        </tbody>
+        <tr>
+            <td><label for="naziv"><input type="text" id="naziv"/></label></td>
+            <td><label for="cena"><input type="text" id="cena"/></label></td>
+            <td><label for="kolicina"><input type="text" id="kolicina"/></label></td>
+            <td class="ukupnacena"><span></span></td>
+            <td><button type="button" id="dodaj">DODAJ</button></td>
+        </tr>
+    </table>
+</body>
+</html>
